@@ -4,7 +4,6 @@ const webpack = require('webpack');
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
     entry: [
-        'webpack-hot-middleware/client',
         'babel-polyfill',
         path.join(__dirname, '../../app/web/index'),
     ],
@@ -17,6 +16,21 @@ module.exports = {
         loaders: [
             // take all less files, compile them, and bundle them in with our js bundle
             {
+                test: /\.jsx?$/,
+                include: path.join(__dirname, '/client/src'),
+                loader: 'babel-loader',
+                query: {
+                  presets: ["react", "es2015", "stage-1"]
+                }
+              },
+              {
+                test: /\.(gif|svg|jpg|png)$/,
+                loader: "file-loader",
+            },
+            {
+                test: /\.css$/,
+                loader: 'style!css!'
+            },{
                 test: /\.less$/,
                 loader: 'style!css!autoprefixer?browsers=last 2 version!less'
             },{
@@ -50,5 +64,5 @@ module.exports = {
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
-    ],
+    ]
 };
