@@ -24,7 +24,7 @@ DROP TABLE IF EXISTS `grades`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `grades` (
   `idgrades` int(11) NOT NULL,
-  `grade` int(11) NOT NULL,
+  `grade` varchar(50) NOT NULL,
   PRIMARY KEY (`idgrades`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -35,6 +35,7 @@ CREATE TABLE `grades` (
 
 LOCK TABLES `grades` WRITE;
 /*!40000 ALTER TABLE `grades` DISABLE KEYS */;
+INSERT INTO `grades` VALUES (1,'1'),(2,'2'),(3,'3'),(4,'4'),(5,'5'),(6,'6'),(7,'7'),(8,'8'),(9,'9'),(10,'10'),(11,'necules');
 /*!40000 ALTER TABLE `grades` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -86,6 +87,7 @@ CREATE TABLE `group` (
 
 LOCK TABLES `group` WRITE;
 /*!40000 ALTER TABLE `group` DISABLE KEYS */;
+INSERT INTO `group` VALUES (1,'30645'),(2,'30643'),(3,'30228'),(4,'30227'),(5,'30236'),(6,'30238'),(7,'30218'),(8,'30215');
 /*!40000 ALTER TABLE `group` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -224,6 +226,7 @@ CREATE TABLE `subject` (
 
 LOCK TABLES `subject` WRITE;
 /*!40000 ALTER TABLE `subject` DISABLE KEYS */;
+INSERT INTO `subject` VALUES (1,'Calcul Numeric',4),(2,'ArhitecturaCalculatoarelor',5),(3,'Sisteme Distribuite',4),(4,'Algoritmi Fundamentali',5),(5,'Analiza Matematica',5),(6,'Matematici Speciale',4),(7,'Tehnologii Multimedia',5),(8,'Programare Orientata pe Obiecte',5);
 /*!40000 ALTER TABLE `subject` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -248,6 +251,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES ('admin','admin'),('secretara','secretara'),('user','user');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -260,4 +264,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-01 21:19:59
+-- Dump completed on 2019-05-01 21:58:04
