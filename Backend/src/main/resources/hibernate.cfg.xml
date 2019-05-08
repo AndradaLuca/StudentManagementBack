@@ -25,7 +25,11 @@
 
         <mapping class="com.StudentManagement.entities.Student"/>
 
+        <mapping class="com.StudentManagement.entities.Group"/>
+
+
         <!--<mapping class="proiect.proiect.entities.client.Client"/>-->
+
         <!--<mapping class="proiect.proiect.entities.flight.Flight"/>-->
         
         <!--<mapping class="proiect.proiect.entities.employee.Employee"/>-->
