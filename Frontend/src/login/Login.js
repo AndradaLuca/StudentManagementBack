@@ -29,17 +29,37 @@ export default class Login extends React.Component {
 
     login(e) {
         e.preventDefault();
-        console.log(this.state.userTextValue)
+
+        // regex.test return true if a valid pattern was found else false
+        let emailValidation = Constants.emailRegex.test(this.state.userTextValue)
+
+        if(emailValidation) {
+            console.log('valid username')
+        } else {
+            console.log('invalid username')
+        }        
+
+        // TODO backend call for login
     }
 
     register(e) {
         e.preventDefault();
-        console.log(this.state.passTextValue)
+
+        // regex.test return true if a valid pattern was found else false
+        let passwordValidation = Constants.passwordRegex.test(this.state.passTextValue)
+
+        if(passwordValidation) {
+            console.log('valid password')
+        } else {
+            console.log('invalid password')
+        }
+
+        // TODO backend call for register
     }
 
     render() {
         return(
-            <div>
+            <div className = 'LoginPage'>
                 <form className = 'LoginForm'>
                     <Label 
                         className = 'LoginLabel'
@@ -47,6 +67,7 @@ export default class Login extends React.Component {
                     /> 
                     <TextField  // username text field
                         className = 'LoginInput'
+                        placeholder = {'Type your username...'}
                         type = {Constants.userTextType}
                         name = 'userTextValue'
                         value = {this.state.userTextValue}
@@ -59,6 +80,7 @@ export default class Login extends React.Component {
                     /> 
                     <TextField  // password text field
                         className = 'LoginInput'
+                        placeholder = {'Type your password...'}
                         type = {Constants.passTextType}
                         name = 'passTextValue'
                         value = {this.state.passTextValue}

@@ -5,6 +5,7 @@ export default class TextField extends React.Component {
         return(
             <input
                 className = {this.props.className}
+                placeholder = {this.props.placeholder}
                 type = {this.props.type}
                 value = {this.props.value}
                 name = {this.props.name}
