@@ -20,7 +20,11 @@
 
         <property name="hibernate.hbm2ddl.auto">update</property>
 
+ 
         <mapping class="com.StudentManagement.entities.Materie"/>
+
+        <mapping class="com.StudentManagement.entities.Student"/>
+ master
         <!--<mapping class="proiect.proiect.entities.client.Client"/>-->
         <!--<mapping class="proiect.proiect.entities.flight.Flight"/>-->
         
