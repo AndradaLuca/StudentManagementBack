@@ -20,7 +20,7 @@
 
         <property name="hibernate.hbm2ddl.auto">update</property>
 
-        <!--<mapping class="proiect.proiect.entities.rezervation.Rezervation"/>-->
+        <mapping class="com.StudentManagement.entities.Student"/>
         <!--<mapping class="proiect.proiect.entities.client.Client"/>-->
         <!--<mapping class="proiect.proiect.entities.flight.Flight"/>-->
         <!--<mapping class="proiect.proiect.entities.user.User"/>-->
