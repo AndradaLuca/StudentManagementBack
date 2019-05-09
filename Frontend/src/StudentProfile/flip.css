@@ -1,0 +1,154 @@
+@import url("//cdn.materialdesignicons.com/1.9.32/css/materialdesignicons.min.css");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400");
+@import url("https://code.getmdl.io/1.3.0/material.indigo-blue.min.css");
+
+
+.center-form{
+  margin:auto;
+}
+
+.card-container {
+  position: absolute;
+  width: 50%;
+  height: 70%;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  perspective: 1000px;
+}
+.card-container .left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 40%;
+  z-index: 2;
+}
+.card-container .left:hover {
+  width: 100%;
+  z-index: 3;
+}
+.card-container .right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 40%;
+  z-index: 2;
+}
+.card-container .right:hover {
+  width: 100%;
+  z-index: 3;
+}
+.card-container .card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform .5s ease-in-out;
+}
+.card-container .left:hover ~ .card {
+  transform: rotateY(-180deg);
+}
+.card-container .right:hover ~ .card {
+  transform: rotateY(180deg);
+}
+
+.card .front, .card .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  color: #444;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  box-shadow: 0 2px 2px 0 rgba(252, 222, 222, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 30%;
+}
+.card .front {
+  background: #fff;
+  z-index: 2;
+}
+.card .back {
+  background: #0eafb7;
+  z-index: 3;
+  transform: rotateY(180deg);
+}
+.card .front .cover {
+  width: 100%;
+  height: 150px;
+  background: #0eafb7;
+  border-radius: 30%;
+}
+.card .front .photo {
+  margin-top: -120px;
+}
+.card .front .photo img {
+  display: block;
+  margin: auto;
+  width: 250px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+.card .front .name {
+  margin: 10px auto 5px;
+  font-size: 1.5em;
+  font-weight: 300;
+  line-height: 1;
+  text-align: center;
+}
+.card .front .role {
+  margin: 0;
+  text-align: center;
+  color: #999;
+}
+.card .front .supporting_text {
+  margin: 15px auto 20px;
+  padding: 8px;
+  text-align: center;
+}
+.card .back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.card .back .icons {
+  padding: 0;
+  list-style: none;
+}
+.card .back .icons li {
+  margin: 20px 0;
+}
+.card .back .icons li i.mdi {
+  color: #FFF;
+  font-size: 2em;
+  line-height: 1;
+  transition: all .3s ease;
+}
+.card .back .icons li i.mdi span {
+  font-style: normal;
+  font-size: 70%;
+  top: -3px;
+  position: relative;
+  margin-left: 8px;
+}
+
+button {
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 0;
+  text-decoration: none;
+  background: #0eafb7;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
