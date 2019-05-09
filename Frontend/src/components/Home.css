@@ -1,0 +1,19 @@
+.jumbo-home {
+    margin-left: -220px;
+    margin-top: -10px;
+    height: 550px;
+    width: 1550px;
+    background-image: url("ut.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.textJ{
+
+    color: white;
+    margin-left: -10px;
+    margin-top: 70px;
+}
+.btn{
+    margin-left: 10px;
+
+}
