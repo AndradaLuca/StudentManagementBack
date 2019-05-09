@@ -1,20 +1,43 @@
-import React from 'react';
+import React, { Component } from 'react';
+import withStyles from "@material-ui/core/styles/withStyles";
+import componentsStyle from "./assets/jss/material-kit-react/views/components";
 import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
+import Note from './Note/Note';
+import Header from "./components/Header/Header";
+import HeaderLinks from './components/Header/HeaderLinks';
+import UserProfile from './StudentProfile/UserProfile';
 
-function App() {
-  return (
-    <div className="App">
-      <BrowserRouter>
-              <div className="App">
+class App extends Component {
 
-                <Route path='/' exact={true} component={} />
-                <Route path='/medlife' component={} />
+  render(){
+    const { classes, ...rest } = this.props;
+     return(
+        <div className="App">
 
-              </div>
-      </BrowserRouter>
-    </div>
+            <Header
+              brand="SINU"
+              rightLinks={<HeaderLinks />}
+              fixed
+              color="black"
+              changeColorOnScroll={{
+                height: 400,
+                color: "black"
+              }}
+              {...rest}
+            />
+
+          <BrowserRouter>
+                  <div className="App">
+                    
+                    <Route path='/profile' component={UserProfile} />
+
+                  </div>
+          </BrowserRouter>
+        </div>
   );
 }
+}
 
-export default App;
+
+export default withStyles(componentsStyle)(App);
