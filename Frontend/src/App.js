@@ -11,6 +11,7 @@ import UserProfile from './StudentProfile/UserProfile';
 
 import Home from './components/Home'
 import StudentGrade from './components/StudentGrade'
+import Login from './login/Login';
 
 
 class App extends Component {
@@ -20,10 +21,6 @@ class App extends Component {
     const { classes, ...rest } = this.props;
      return(
         <div className="App">
-
-
-
-
 
             <Header
               brand="SINU"
@@ -43,6 +40,7 @@ class App extends Component {
                       <Route path='/' exact={true} component={Home} />
                       <Route path='/studGrade' component={StudentGrade}/>
                       <Route path='/profile' component={UserProfile} />
+                      <Route path='/login' component={Login}/>
 
                   </div>
           </BrowserRouter>
