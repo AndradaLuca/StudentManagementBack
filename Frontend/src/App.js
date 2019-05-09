@@ -4,6 +4,18 @@ import componentsStyle from "./assets/jss/material-kit-react/views/components";
 import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
 
+
+import Login from './login/Login'
+
+function App() {
+  return (
+    <div className="App">
+      <BrowserRouter>
+              <div className="App">
+
+                <Route path='/' exact={true} component={Login} />
+                {/* <Route path='/medlife' component={} /> */}
+
 import Note from './Note/Note';
 import Header from "./components/Header/Header";
 import HeaderLinks from './components/Header/HeaderLinks';
@@ -11,6 +23,7 @@ import UserProfile from './StudentProfile/UserProfile';
 
 import Home from './components/Home'
 import StudentGrade from './components/StudentGrade'
+
 
 
 class App extends Component {
