@@ -21,9 +21,9 @@ class HeaderLinks extends React.Component {
 }
 
   componentDidMount() {
-    var logat = document.getElementById("logat");
-    var nelogat = document.getElementById("nelogat");
-    var name = ' ';
+    let logat = document.getElementById("logat");
+    let nelogat = document.getElementById("nelogat");
+    let name = ' ';
 
     // const id =  window.localStorage.getItem('id');
     // const mail =  window.localStorage.getItem('user');
