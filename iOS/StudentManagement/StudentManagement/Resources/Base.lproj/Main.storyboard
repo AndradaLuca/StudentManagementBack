@@ -24,13 +24,6 @@
                                     <constraint firstAttribute="height" constant="250" id="H30-MN-OnS"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnU-sl-l89">
-                                <rect key="frame" x="27" y="350" width="360" height="372"/>
-                                <string key="text">Universitatea Tehnică din Cluj-Napoca se prezintă astăzi ca o instituție de învațământ superior modernă, în plină evoluție, confirmând autentice disponibilități de creație științifică și culturală, fiind o “Universitate de Cercetare Avansată și Educație”, între primele douăsprezece universități din țară, conform Ordinului Ministerului Educației Naționale nr. 5262 din 5 septembrie 2011 privind clasificarea universitaților acreditate din sistemul național de învațământ.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3i-cB-DfC" customClass="MainButton" customModule="StudentManagement" customModuleProvider="target">
                                 <rect key="frame" x="137" y="722" width="140" height="40"/>
                                 <constraints>
@@ -43,17 +36,24 @@
                                     <segue destination="Qf4-7N-RgB" kind="push" id="esq-cU-4DL"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Tig-aT-IM6">
+                                <rect key="frame" x="0.0" y="358" width="414" height="344"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text">Universitatea Tehnică din Cluj-Napoca se prezintă astăzi ca o instituție de învațământ superior modernă, în plină evoluție, confirmând autentice disponibilități de creație științifică și culturală, fiind o “Universitate de Cercetare Avansată și Educație”, între primele douăsprezece universități din țară, conform Ordinului Ministerului Educației Naționale nr. 5262 din 5 septembrie 2011 privind clasificarea universitaților acreditate din sistemul național de învațământ.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Tig-aT-IM6" firstAttribute="top" secondItem="7V4-vb-KrY" secondAttribute="bottom" constant="20" id="1Ty-g0-y36"/>
                             <constraint firstItem="7V4-vb-KrY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2GH-gw-3S1"/>
+                            <constraint firstItem="Tig-aT-IM6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="828-HW-FHa"/>
                             <constraint firstItem="7V4-vb-KrY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="IAX-1k-RVu"/>
-                            <constraint firstItem="fnU-sl-l89" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="27" id="QN8-AZ-N2Y"/>
+                            <constraint firstItem="Tig-aT-IM6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="J7h-zz-DVx"/>
                             <constraint firstItem="o3i-cB-DfC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="X29-jg-aO2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="o3i-cB-DfC" secondAttribute="bottom" constant="100" id="ojY-yX-Dfh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fnU-sl-l89" secondAttribute="trailing" constant="27" id="qoP-oL-FJK"/>
-                            <constraint firstItem="fnU-sl-l89" firstAttribute="top" secondItem="7V4-vb-KrY" secondAttribute="bottom" constant="12" id="sy7-hX-acX"/>
-                            <constraint firstItem="o3i-cB-DfC" firstAttribute="top" secondItem="fnU-sl-l89" secondAttribute="bottom" id="vwr-qA-3K7"/>
+                            <constraint firstItem="o3i-cB-DfC" firstAttribute="top" secondItem="Tig-aT-IM6" secondAttribute="bottom" constant="20" id="sus-mU-bOT"/>
                             <constraint firstItem="7V4-vb-KrY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xru-aS-2ZQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7V4-vb-KrY" secondAttribute="trailing" id="zSy-bS-LRD"/>
                         </constraints>
