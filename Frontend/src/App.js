@@ -21,8 +21,7 @@ class App extends Component {
      return(
         <div className="App">
 
-                <Route path='/' exact={true} component={Home} />
-                <Route path='/studGrade' component={StudentGrade}/>
+
 
 
 
@@ -40,8 +39,10 @@ class App extends Component {
 
           <BrowserRouter>
                   <div className="App">
-                    
-                    <Route path='/profile' component={UserProfile} />
+
+                      <Route path='/' exact={true} component={Home} />
+                      <Route path='/studGrade' component={StudentGrade}/>
+                      <Route path='/profile' component={UserProfile} />
 
                   </div>
           </BrowserRouter>
