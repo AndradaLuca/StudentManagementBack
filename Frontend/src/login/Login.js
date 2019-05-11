@@ -59,6 +59,7 @@ export default class Login extends React.Component {
 
     render() {
         return(
+            <div className = 'LoginBackground'>
             <div className = 'LoginPage'>
                 <form className = 'LoginForm'>
                     <Label 
@@ -99,6 +100,7 @@ export default class Login extends React.Component {
                         onClick = {this.register}
                     />
                 </form>
+            </div>
             </div>
         )
     }
