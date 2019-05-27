@@ -15,6 +15,7 @@ public class SesiuneService {
 
     //create a new student
     public Sesiune save(Sesiune sesiune) {
+
         return sesiuneRepository.save(sesiune);
     }
 
