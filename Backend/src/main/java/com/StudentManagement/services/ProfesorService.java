@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProfesorService {
@@ -14,6 +15,10 @@ public class ProfesorService {
 
     @Autowired
     ProfesorRepository profesorRepository;
+
+    public Optional<Profesor> findById(Integer id){
+        return profesorRepository.findById(id);
+    }
 
     //create a new student
     public Profesor save(Profesor profesor) {
