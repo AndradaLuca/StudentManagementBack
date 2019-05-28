@@ -6,7 +6,7 @@
     <session-factory>
 
         <!-- Database connection settings -->
-        <property name="connection.url">jdbc:mysql://localhost:3308/student_management_db</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/student_management_db</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="connection.username">root</property>
         <property name="connection.password">789456123</property>
@@ -22,8 +22,12 @@
 
  
         <mapping class="com.StudentManagement.entities.Materie"/>
-
+        <mapping class="com.StudentManagement.entities.Sesiune"/>
         <mapping class="com.StudentManagement.entities.Student"/>
+        <mapping class="com.StudentManagement.entities.Profesor"/>
+        <mapping class="com.StudentManagement.entities.Grup"/>
+        <mapping class="com.StudentManagement.entities.StudentGrade"/>
+        <mapping class="com.StudentManagement.entities.User"/>
 
         <!--<mapping class="proiect.proiect.entities.client.Client"/>-->
         <!--<mapping class="proiect.proiect.entities.flight.Flight"/>-->

@@ -1,5 +1,6 @@
 package com.StudentManagement.controller;
 
+import com.StudentManagement.dto.SubjectStudentGrade;
 import com.StudentManagement.entities.Student;
 import com.StudentManagement.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,10 @@ public class StudentController {
         studentService.delete(student);
     }
 
-
+    @PostMapping("/grades")
+    public List<SubjectStudentGrade> getStudentGrades(@Valid @RequestBody String email){
+        System.out.println("ASFDDDDDDDDDDDDDDDDDDDD"+ " " + email);
+        return studentService.getStudentGrades(email);}
 
 
 }

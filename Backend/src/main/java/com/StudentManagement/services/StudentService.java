@@ -1,5 +1,6 @@
 package com.StudentManagement.services;
 
+import com.StudentManagement.dto.SubjectStudentGrade;
 import com.StudentManagement.entities.Student;
 import com.StudentManagement.repositories.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,10 @@ public class StudentService {
         return studentRepository.findAll();
     }
 
-
+    public List<SubjectStudentGrade> getStudentGrades( String email)
+    {
+        return studentRepository.getStudentGradeSubject(email);
+    }
 
 
 }
