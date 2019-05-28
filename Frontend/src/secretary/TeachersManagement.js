@@ -2,7 +2,7 @@ import React from 'react'
 import TextField from '../reusable_components/TextField'
 import Label from '../reusable_components/Label'
 import './TeachersManagement.css'
-import { Button } from '@material-ui/core';
+import Button from '../reusable_components/Button';
 
 export default class TeachersManagement extends React.Component {
     constructor(props) {
@@ -86,7 +86,11 @@ export default class TeachersManagement extends React.Component {
                     />
                 </form>
 
-                {/* <Button onClick = {this.test}>test</Button> */}
+                <Button 
+                    className = 'TMB'
+                    text = 'Adauga profesor'
+                    onClick = {this.test}
+                />
             </div>
         )
     }

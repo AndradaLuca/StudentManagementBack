@@ -2,13 +2,14 @@ import React from 'react'
 import Label from '../reusable_components/Label'
 import TextField from '../reusable_components/TextField'
 import './StudentsManagement.css'
-import { Button } from 'react-bootstrap';
+import Button from '../reusable_components/Button';
 
 export default class StudentsManagement extends React.Component {
     constructor(props) {
         super(props)
 
         this.state = {
+            id: '',
             nume: '',
             prenume: '',
             cnp: '',
@@ -40,6 +41,18 @@ export default class StudentsManagement extends React.Component {
         return(
             <div className = 'StudentsPage'>
                 <form className = 'StudentsForm'>
+                    <Label 
+                        className = 'StudentsManagementLabel'
+                        text = 'Id'
+                    /> 
+                    <TextField
+                        className = 'StudentsManagementInput'
+                        placeholder = 'Type your text here'
+                        type = 'text'
+                        name = 'id'
+                        value = {this.state.id}
+                        onChange = {this.onChange}
+                    />
                     <Label 
                         className = 'StudentsManagementLabel'
                         text = 'Nume'
@@ -119,7 +132,18 @@ export default class StudentsManagement extends React.Component {
                     />
                     <br/>
                 </form>
-                {/* <Button onClick = {this.test}>test</Button> */}
+                    <Button
+                        className = 'SMB'
+                        onClick = {this.test}
+                        text = 'Adauga student'
+                    />
+
+                    <Button
+                        className = 'SMB'
+                        onClick = {this.test}
+                        text = 'Modifica informatii student'
+                    />
+                
             </div>
         )
     }
