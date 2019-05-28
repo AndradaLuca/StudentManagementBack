@@ -17,8 +17,10 @@ class HeaderLinks extends React.Component {
        currentMail: '',
  
       };
-  
-}
+    this.managementProfesori = this.managementProfesori.bind(this)
+    this.managementStudenti = this.managementStudenti.bind(this)
+    this.planificareSesiune = this.planificareSesiune.bind(this)
+  }
 
   componentDidMount() {
     let logat = document.getElementById("logat");
@@ -43,7 +45,7 @@ class HeaderLinks extends React.Component {
 
      const user = localStorage.getItem('user');
 
-    if(user !== null){
+    if(user === null){
       logat.style.display = "block";
       nelogat.style.display = "none";
     }
@@ -57,12 +59,29 @@ class HeaderLinks extends React.Component {
     localStorage.clear();
   }
 
+  // secretariat
+  managementProfesori() {
+
+  }
+
+  managementStudenti() {
+
+  }
+
+  planificareSesiune() {
+
+  }
+
   render(){
   const { classes } = this.props;
   return (
     <List className={classes.list}>
      
       <div id='logat'>
+        <Button href='/profesori' onClick={this.managementProfesori}> Profesori </Button>
+        <Button href='/studenti' onClick={this.managementStudenti}> Studenti </Button>
+        <Button href='/sesiune' onClick={this.planificareSesiune}> Sesiune </Button>
+
         <Button href="/user-profile" color="transparent">
             <b id='nume'></b>
         </Button>

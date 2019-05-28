@@ -12,6 +12,10 @@ import UserProfile from './StudentProfile/UserProfile';
 import Home from './components/Home'
 import StudentGrade from './components/StudentGrade'
 import Login from './login/Login';
+import SecretaryHeader from './secretary/SecretaryHeader';
+import StudentsManagement from './secretary/StudentsManagement';
+import TeachersManagement from './secretary/TeachersManagement';
+import ExamSession from './secretary/ExamSession';
 
 
 class App extends Component {
@@ -41,6 +45,10 @@ class App extends Component {
                       <Route path='/studGrade' component={StudentGrade}/>
                       <Route path='/profile' component={UserProfile} />
                       <Route path='/login' component={Login}/>
+                      <Route path='/secretary' component={SecretaryHeader}/>
+                      <Route path='/studenti' component={StudentsManagement}/>
+                      <Route path='/profesori' component={TeachersManagement}/>
+                      <Route path='/sesiune' component={ExamSession}/>
 
                   </div>
           </BrowserRouter>

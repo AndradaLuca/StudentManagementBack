@@ -1,0 +1,40 @@
+.TeachersPage {
+    width: 500px;
+	height: 200px;
+	
+	position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+  	
+	margin: auto;
+}
+
+.TeachersForm {
+    position: relative;
+    top: -150px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    font-size: 200%;
+    display: table;
+}
+
+.TeachersManagementLabel {
+    margin-left: 30px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    color: white;
+    display: inline-block;
+    float: left;
+    clear: left;
+}
+
+.TeachersManagementInput {
+    margin-bottom: 20px;
+    padding-right: 10px;
+    width: 300px;
+    display: inline-block;
+    float: right;
+}

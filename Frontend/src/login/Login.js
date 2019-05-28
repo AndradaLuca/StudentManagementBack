@@ -35,6 +35,7 @@ export default class Login extends React.Component {
 
         if(emailValidation) {
             console.log('valid username')
+            this.props.history.push('/secretary')
         } else {
             console.log('invalid username')
         }        
