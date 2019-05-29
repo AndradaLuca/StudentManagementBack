@@ -1,5 +1,6 @@
 package com.StudentManagement.controller;
 
+import com.StudentManagement.dto.ProfPageDto;
 import com.StudentManagement.dto.SubjectStudentGrade;
 import com.StudentManagement.entities.Student;
 import com.StudentManagement.services.StudentService;
@@ -37,7 +38,13 @@ public class StudentController {
     @PostMapping("/grades")
     public List<SubjectStudentGrade> getStudentGrades(@Valid @RequestBody String email){
         System.out.println("ASFDDDDDDDDDDDDDDDDDDDD"+ " " + email);
+        System.out.println(studentService.getStudentGrades(email).toString());
         return studentService.getStudentGrades(email);}
 
+     @GetMapping("/studentsBySubject")
+    public List<ProfPageDto> getStudentsBySubject(@RequestParam("prof") String prof)
+     {
+         return studentService.getStudentsByProf(prof);
+     }
 
 }
