@@ -52,27 +52,38 @@ class FlippingCardPage extends React.Component {
      this.state = { 
        phone: '', 
        email:'',
-       user: []
+       student: []
       };
 }
 
   componentDidMount() {
 
-    if(localStorage.getItem('user') === null){
+   // if(localStorage.getItem('user') === null){
        
-    }
-    else{
+    //}
+
         const url= "";
-        Request.get(url)
-          .then((response)=> {
-            //
-          })
-      }
+        Request.get("http://192.168.43.113:8080/student/all/")
+            .then((response)=>{
+
+                var result = response.body.filter(function(r) { return r["email"] === "andrada.luca@student.utcluj.ro" })[0]||'No record found';
+                //window.localStorage.setItem("id",result.id);
+                this.setState({
+                    student: result
+                })
+                console.log(this.state.student.cnp);
+            })
+            .catch(err => {
+                this.setState({
+                    hasError: true
+                })
+            })
+
 }
 
 update()
 {
-    const id =  window.localStorage.getItem('id');
+   /* const id =  window.localStorage.getItem('id');
     var phone = document.getElementById("phone").value;
     var email = document.getElementById("email").value;
     
@@ -103,12 +114,38 @@ update()
     else{
       alert('Nu e nimic de editat');
     }
+    */
+
+
+    Request.post('http://192.168.43.113:8080/student/addOrUpdate/')
+        .set('Content-Type', 'application/json')
+        .send({
+            idStudent: 5,
+            email: document.getElementById("email").value,
+            idgroup: this.state.student.idgroup,
+            anstudiu: this.state.student.anstudiu,
+            telefon: document.getElementById("phone").value,
+            cnp: this.state.student.cnp
+        })
+        .then((response)=>{
+
+            console.log(response.body)
+        })
+        .catch(err => {
+            this.setState({
+                hasError: true
+            })
+        })
+
 }
 
 
 
 render() {
   const { classes } = this.props;
+
+  const {student} = this.state;
+
   return (
     <div>
     <div class="card-container">
@@ -155,7 +192,8 @@ render() {
           </form>
           
                   <div class="mdl-card__actions mdl-card--border mdl-typography--text-center">
-                    <button class="btn btn-default btn-lg" onClick=''>EDIT</button>
+                    <button class="btn btn-default btn-lg" onClick={()=>this.update()}>EDIT</button>
+                      <a href="http://localhost:3000/studGrade" className="btn btn-default btn-lg">NOTELE MELE</a>
                   </div>
         </div>
 
@@ -163,11 +201,24 @@ render() {
           <div className={classes.root}>
             <ul class="icons">
 
+
+                <li>
+                    <Chip label="Email" className={classes.chip} />
+                    <Chip
+                        avatar={<Avatar></Avatar>}
+                        label={student.email}
+                        clickable
+                        className={classes.chip}
+                        color="primary"
+                    />
+                </li>
+
+
               <li>
               <Chip label="Nume" className={classes.chip} />
               <Chip
                     avatar={<Avatar></Avatar>}
-                    label='nume'
+                    label="Andrada Luca"
                     clickable
                     className={classes.chip}
                     color="primary"
@@ -178,51 +229,33 @@ render() {
               <Chip label="CNP" className={classes.chip} />
               <Chip
                     avatar={<Avatar></Avatar>}
-                    label='CNP'
+                    label={student.cnp}
                     clickable
                     className={classes.chip}
                     color="primary"
                   />
               </li>
 
-              <li> 
-              <Chip label="GRUPA" className={classes.chip} />
-              <Chip
-                    avatar={<Avatar></Avatar>}
-                    label='GRUPA'
-                    clickable
-                    className={classes.chip}
-                    color="primary"
-                  />
-              </li>
+
 
               <li>
               <Chip label="AN" className={classes.chip} />
               <Chip
                     avatar={<Avatar></Avatar>}
-                    label='AN'
+                    label={student.anstudiu}
                     clickable
                     className={classes.chip}
                     color="primary"
                   />
               </li>
 
-              <li>
-              <Chip label="MAIL" className={classes.chip} />
-              <Chip
-                    avatar={<Avatar></Avatar>}
-                    label='MAIL'
-                    clickable
-                    className={classes.chip}
-                    color="primary"
-                  />
-              </li>
+
 
               <li>
               <Chip label="TELEFON" className={classes.chip} />
               <Chip
                     avatar={<Avatar></Avatar>}
-                    label='TELEFON'
+                    label={student.telefon}
                     clickable
                     className={classes.chip}
                     color="primary"

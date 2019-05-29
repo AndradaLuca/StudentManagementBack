@@ -2,19 +2,24 @@ import React, {Component} from 'react';
 import {BootstrapTable,
     TableHeaderColumn} from 'react-bootstrap-table';
 
-class TableGrade extends Component {
+class TableProfessor extends Component {
     render() {
         return (
             <div>
                 <BootstrapTable data={this.props.data} className="d-sm-table-row"  >
                     <TableHeaderColumn isKey
-                                       dataField='name'
-                                       width="185">
+                                       dataField='email'
+                                       width="220">
+                        Email
+                    </TableHeaderColumn>
+
+                    <TableHeaderColumn dataField='name'
+                                       width="210">
                         Materie
                     </TableHeaderColumn>
 
                     <TableHeaderColumn dataField='grade'
-                                       width="110">
+                                       >
                         Nota
                     </TableHeaderColumn>
 
@@ -28,4 +33,4 @@ class TableGrade extends Component {
     }
 }
 
-export default TableGrade;
+export default TableProfessor;

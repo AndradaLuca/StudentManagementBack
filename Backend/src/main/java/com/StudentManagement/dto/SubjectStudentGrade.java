@@ -4,25 +4,16 @@ import org.springframework.beans.factory.annotation.Value;
 
 public class SubjectStudentGrade {
 
-    private String email;
-    private String grade;
     private String name;
+    private String grade;
 
     public SubjectStudentGrade() {
     }
 
-    public SubjectStudentGrade(String email, String grade, String name) {
-        this.email = email;
-        this.grade = grade;
+
+    public SubjectStudentGrade(String name, String grade) {
         this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+        this.grade = grade;
     }
 
     public String getGrade() {

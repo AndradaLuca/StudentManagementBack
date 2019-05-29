@@ -2,9 +2,49 @@ import React, {Component} from 'react';
 import TableGrade from './TableGrade'
 import "./StudentGrade.css"
 import {Container, Jumbotron} from "react-bootstrap";
+
+import Request from "superagent";
+
 class StudentGrade extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            studentGrades: [],
+            hasError: false
+        }
+    }
+
+
+    componentWillMount() {
+
+        this.getStudentGrades();
+    }
+
+    getStudentGrades(){
+
+        Request.post('http://192.168.43.113:8080/student/grades/')
+            .set('Content-Type', 'text/plain')
+            .send("andrada.luca@student.utcluj.ro")
+            .then((response)=>{
+                this.setState({
+                    studentGrades: response.body
+                })
+                console.log(response.body)
+            })
+            .catch(err => {
+                this.setState({
+                    hasError: true
+                })
+            })
+
+    }
+
+
+
     render() {
-        var studGrade=[{"subject":"DISI","grade":8,"credits":5}]
+        const { studentGrades } = this.state;
 
         return (
 
@@ -18,7 +58,8 @@ class StudentGrade extends Component {
                 <br/>
                 <div className="table-G">
 
-                    <TableGrade data={studGrade} />
+                    <TableGrade data={studentGrades.length > 0  ? studentGrades : ''}/>
+
 
                 </div>
 

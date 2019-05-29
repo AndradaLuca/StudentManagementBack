@@ -12,7 +12,7 @@ import javax.mail.internet.MimeMessage;
 public abstract class MailRepository {
 
    // @Override
-    public static void mail(String date, String mailAdress) {
+    public static void mail(String mailAdress,String subject, String txt) {
 
         final String username = "ds.utcn@gmail.com";
         final String password = "facultate1";
@@ -36,9 +36,11 @@ public abstract class MailRepository {
             message.setFrom(new InternetAddress("ds.utcn@gmail.com"));
             message.setRecipients(Message.RecipientType.TO,
                     InternetAddress.parse(mailAdress));
-            message.setSubject("Planificare Sesiune");
-            message.setText("Dear Prf,"
-                    + "\n\n O sa trebuiasca sa fi prezent in data de " + date + " la facultate ca na!");
+            message.setSubject(subject);
+           // message.setSubject("Planificare Sesiune");
+           // message.setText("Dear Prf,"
+                   // + "\n\n O sa trebuiasca sa fi prezent in data de " + date + " la facultate ca na!");
+            message.setText(txt);
 
             Transport.send(message);
 

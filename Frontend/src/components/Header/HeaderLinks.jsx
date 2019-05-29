@@ -84,7 +84,14 @@ class HeaderLinks extends React.Component {
             <b id='nume'></b>
         </Button>
 
+<<<<<<< HEAD
         <Button href="/" onClick={()=>this.logout()}>Logout</Button>
+=======
+
+
+        <Button href="/profile" color="transparent">{window.localStorage.getItem("user")}</Button>
+        <Button href="/" onClick={()=>this.logout()} >Logout</Button>
+>>>>>>> 4c93d3555db493899837dd0c3d0d285deb9843ff
       </div>
 
       <div id='nelogat'>
