@@ -6,8 +6,6 @@ import TableProfessor from './TableProfessor'
 import {Form,Label,Input} from 'reactstrap';
 
 class Professor extends Component {
-<<<<<<< HEAD
-=======
 
     constructor(props) {
         super(props);
@@ -62,7 +60,6 @@ class Professor extends Component {
     }
 
 
->>>>>>> 4c93d3555db493899837dd0c3d0d285deb9843ff
     render() {
 
         const { profGrades } = this.state;

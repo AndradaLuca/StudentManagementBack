@@ -3,6 +3,7 @@ import Label from '../reusable_components/Label'
 import TextField from '../reusable_components/TextField'
 import './StudentsManagement.css'
 import Button from '../reusable_components/Button';
+import { Container, Jumbotron } from 'react-bootstrap';
 
 export default class StudentsManagement extends React.Component {
     constructor(props) {
@@ -19,17 +20,7 @@ export default class StudentsManagement extends React.Component {
         }
 
         this.onChange = this.onChange.bind(this)
-        // this.test = this.test.bind(this)
     }
-
-    // test() {
-    //     console.log(this.state.nume)
-    //     console.log(this.state.prenume)
-    //     console.log(this.state.cnp)
-    //     console.log(this.state.telefon)
-    //     console.log(this.state.grupa)
-    //     console.log(this.state.an)
-    // }
 
     onChange(e) {
 		this.setState({
@@ -39,7 +30,8 @@ export default class StudentsManagement extends React.Component {
     
     render() {
         return(
-            <div className = 'StudentsPage'>
+            <Container>
+                <Jumbotron className = 'StudentsPage'>
                 <form className = 'StudentsForm'>
                     <Label 
                         className = 'StudentsManagementLabel'
@@ -143,8 +135,8 @@ export default class StudentsManagement extends React.Component {
                         onClick = {this.test}
                         text = 'Modifica informatii student'
                     />
-                
-            </div>
+                </Jumbotron>
+            </Container>
         )
     }
 }

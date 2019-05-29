@@ -1,22 +1,13 @@
-.TeachersPage {
-    width: 500px;
-	height: 300px;
-	
-	position: absolute;
-	top:-20px;
-	bottom: 0px;
-	left: 0px;
-	right: 0px;
-  	
-	margin: auto;
+.TeachersPage{
+    position: absolute;
+    top: 750px;
+    left: 100px;
+    background-color: white !important;
 }
 
 .TeachersForm {
-    position: relative;
-    top: -100px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
+    margin-left: 350px;
+    margin-right: 350px;
     font-size: 200%;
     display: table;
 }
@@ -25,25 +16,25 @@
     margin-left: 30px;
     margin-right: 10px;
     margin-bottom: 30px;
-    color: white;
+    color: black;
     display: inline-block;
     float: left;
     clear: left;
 }
 
 .TeachersManagementInput {
-    margin-bottom: 20px;
     padding-right: 10px;
-    width: 300px;
+    width: 350px;
     display: inline-block;
     float: right;
 }
 
 .TMB {
     font-size: 20px;
-	margin-left: 50px;
+    margin-left: -150px;
+    margin-top: 50px;
     border: none;
-    background-color: white;
+    background-color: cyan;
     color: black;
 	text-align: center;
 	border-radius: 10px;

@@ -4,6 +4,7 @@ import Label from '../reusable_components/Label'
 import TextField from '../reusable_components/TextField'
 import Button from '../reusable_components/Button'
 import './ExamSession.css'
+import { Container, Jumbotron } from 'react-bootstrap';
 
 export default class ExamSession extends React.Component {
     constructor(props) {
@@ -34,15 +35,12 @@ export default class ExamSession extends React.Component {
     }
 
     onClick() {
-        console.log(this.state.data)
-        console.log(this.state.materie)
-        console.log(this.state.ora)
-        console.log(this.state.sala)
     }
 
     render() {
         return(
-            <div className = 'SessionPage'>
+            <Container>
+                <Jumbotron className = 'SessionPage'>
                 <div className = 'CalendarDiv'>
                     <Calendar
                         onClickDay = {this.onClickDay}
@@ -94,7 +92,8 @@ export default class ExamSession extends React.Component {
                     text = 'Adauga'
                     onClick = {this.onClick}
                 />
-            </div>
+                </Jumbotron>
+            </Container>
         )
     }
 }
