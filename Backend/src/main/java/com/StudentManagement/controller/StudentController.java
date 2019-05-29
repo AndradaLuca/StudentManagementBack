@@ -37,6 +37,7 @@ public class StudentController {
     @PostMapping("/grades")
     public List<SubjectStudentGrade> getStudentGrades(@Valid @RequestBody String email){
         System.out.println("ASFDDDDDDDDDDDDDDDDDDDD"+ " " + email);
+        System.out.println(studentService.getStudentGrades(email).toString());
         return studentService.getStudentGrades(email);}
 
 
