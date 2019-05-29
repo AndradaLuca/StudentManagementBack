@@ -40,41 +40,42 @@ INSERT INTO `grades` VALUES (1,'1'),(2,'2'),(3,'3'),(4,'4'),(5,'5'),(6,'6'),(7,'
 UNLOCK TABLES;
 
 --
--- Table structure for table `grades_subject`
+-- Table structure for table `gradessubject`
 --
 
-DROP TABLE IF EXISTS `grades_subject`;
+DROP TABLE IF EXISTS `gradessubject`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `grades_subject` (
-  `idgrades_subject` int(11) NOT NULL,
+CREATE TABLE `gradessubject` (
+  `idgradessubject` int(11) NOT NULL,
   `idgrade` int(11) NOT NULL,
   `idsubject` int(11) NOT NULL,
-  PRIMARY KEY (`idgrades_subject`),
+  PRIMARY KEY (`idgradessubject`),
   KEY `idgrade_idx` (`idgrade`),
   KEY `idsubject_idx` (`idsubject`),
-  CONSTRAINT `idgrade` FOREIGN KEY (`idgrade`) REFERENCES `grades` (`idgrades`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `idsubject` FOREIGN KEY (`idsubject`) REFERENCES `subject` (`idsubject`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `idgrade` FOREIGN KEY (`idgrade`) REFERENCES `grades` (`idgrades`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `idsubject` FOREIGN KEY (`idsubject`) REFERENCES `subject` (`idsubject`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `grades_subject`
+-- Dumping data for table `gradessubject`
 --
 
-LOCK TABLES `grades_subject` WRITE;
-/*!40000 ALTER TABLE `grades_subject` DISABLE KEYS */;
-/*!40000 ALTER TABLE `grades_subject` ENABLE KEYS */;
+LOCK TABLES `gradessubject` WRITE;
+/*!40000 ALTER TABLE `gradessubject` DISABLE KEYS */;
+INSERT INTO `gradessubject` VALUES (1,1,1),(2,5,2),(3,6,3),(4,7,4),(5,9,7),(6,7,2),(7,1,2),(8,10,2),(10,3,2),(12,2,2);
+/*!40000 ALTER TABLE `gradessubject` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `group`
+-- Table structure for table `grupa`
 --
 
-DROP TABLE IF EXISTS `group`;
+DROP TABLE IF EXISTS `grupa`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `group` (
+CREATE TABLE `grupa` (
   `idgroup` int(11) NOT NULL,
   `denumire` varchar(255) NOT NULL,
   PRIMARY KEY (`idgroup`)
@@ -82,13 +83,35 @@ CREATE TABLE `group` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `group`
+-- Dumping data for table `grupa`
 --
 
-LOCK TABLES `group` WRITE;
-/*!40000 ALTER TABLE `group` DISABLE KEYS */;
-INSERT INTO `group` VALUES (1,'30645'),(2,'30643'),(3,'30228'),(4,'30227'),(5,'30236'),(6,'30238'),(7,'30218'),(8,'30215');
-/*!40000 ALTER TABLE `group` ENABLE KEYS */;
+LOCK TABLES `grupa` WRITE;
+/*!40000 ALTER TABLE `grupa` DISABLE KEYS */;
+INSERT INTO `grupa` VALUES (1,'30645'),(2,'30643'),(3,'30228'),(4,'30227'),(5,'30236'),(6,'30238'),(7,'30218'),(8,'30215'),(9,'aaa');
+/*!40000 ALTER TABLE `grupa` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `hibernate_sequence`
+--
+
+DROP TABLE IF EXISTS `hibernate_sequence`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `hibernate_sequence` (
+  `next_val` bigint(20) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `hibernate_sequence`
+--
+
+LOCK TABLES `hibernate_sequence` WRITE;
+/*!40000 ALTER TABLE `hibernate_sequence` DISABLE KEYS */;
+INSERT INTO `hibernate_sequence` VALUES (14),(14),(14),(14),(14);
+/*!40000 ALTER TABLE `hibernate_sequence` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -105,9 +128,9 @@ CREATE TABLE `proffesor` (
   PRIMARY KEY (`idprof`),
   KEY `email_idx` (`user`),
   KEY `idsubject_idx` (`subject`),
-  CONSTRAINT `subject` FOREIGN KEY (`subject`) REFERENCES `subject` (`idsubject`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `user` FOREIGN KEY (`user`) REFERENCES `user` (`email`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  CONSTRAINT `subject` FOREIGN KEY (`subject`) REFERENCES `subject` (`idsubject`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `user` FOREIGN KEY (`user`) REFERENCES `user` (`email`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -116,6 +139,7 @@ CREATE TABLE `proffesor` (
 
 LOCK TABLES `proffesor` WRITE;
 /*!40000 ALTER TABLE `proffesor` DISABLE KEYS */;
+INSERT INTO `proffesor` VALUES (1,'prof',2);
 /*!40000 ALTER TABLE `proffesor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -132,7 +156,7 @@ CREATE TABLE `session` (
   `idprof` int(11) DEFAULT NULL,
   PRIMARY KEY (`idsession`),
   KEY `idprof_idx` (`idprof`),
-  CONSTRAINT `idprof` FOREIGN KEY (`idprof`) REFERENCES `proffesor` (`idprof`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `idprof` FOREIGN KEY (`idprof`) REFERENCES `proffesor` (`idprof`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -163,8 +187,8 @@ CREATE TABLE `student` (
   UNIQUE KEY `cnp_UNIQUE` (`cnp`),
   KEY `idgroup_idx` (`idgroup`),
   KEY `email_idx` (`email`),
-  CONSTRAINT `email` FOREIGN KEY (`email`) REFERENCES `user` (`email`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `idgroup` FOREIGN KEY (`idgroup`) REFERENCES `group` (`idgroup`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `email` FOREIGN KEY (`email`) REFERENCES `user` (`email`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `idgroup` FOREIGN KEY (`idgroup`) REFERENCES `grupa` (`idgroup`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -174,6 +198,7 @@ CREATE TABLE `student` (
 
 LOCK TABLES `student` WRITE;
 /*!40000 ALTER TABLE `student` DISABLE KEYS */;
+INSERT INTO `student` VALUES (2,'aaa','123444',1,'1','0000'),(4,'aaa','12344',1,'1','0000'),(5,'andrada.luca@student.utcluj.ro','234567',2,'2','23456');
 /*!40000 ALTER TABLE `student` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -185,14 +210,14 @@ DROP TABLE IF EXISTS `studentgrade`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `studentgrade` (
-  `idstudentgrade` int(11) NOT NULL AUTO_INCREMENT,
+  `idstudentgrade` int(11) NOT NULL,
   `idstudent` int(11) NOT NULL,
   `idgradesubject` int(11) NOT NULL,
   PRIMARY KEY (`idstudentgrade`),
   KEY `idstudent_idx` (`idstudent`),
   KEY `idgradesubject_idx` (`idgradesubject`),
-  CONSTRAINT `idgradesubject` FOREIGN KEY (`idgradesubject`) REFERENCES `grades_subject` (`idgrades_subject`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `idstudent` FOREIGN KEY (`idstudent`) REFERENCES `student` (`idstudent`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `idgradesubject` FOREIGN KEY (`idgradesubject`) REFERENCES `gradessubject` (`idgradessubject`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `idstudent` FOREIGN KEY (`idstudent`) REFERENCES `student` (`idstudent`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -202,6 +227,7 @@ CREATE TABLE `studentgrade` (
 
 LOCK TABLES `studentgrade` WRITE;
 /*!40000 ALTER TABLE `studentgrade` DISABLE KEYS */;
+INSERT INTO `studentgrade` VALUES (1,5,2),(2,5,4),(3,5,3),(5,5,7),(6,5,2),(9,2,8),(11,2,10),(13,2,12),(16,2,1);
 /*!40000 ALTER TABLE `studentgrade` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -251,7 +277,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('admin','admin'),('secretara','secretara'),('user','user');
+INSERT INTO `user` VALUES ('aaa','aaa'),('admin','admin'),('andrada.luca@student.utcluj.ro','parola'),('prof','prof'),('secretara','secretara'),('user','user');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -264,4 +290,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-01 21:58:04
+-- Dump completed on 2019-05-29 10:43:56
