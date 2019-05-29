@@ -4,12 +4,19 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^3.9.3",
+    "@material-ui/icons": "^3.0.2",
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
     "material-kit": "^2.0.4",
     "material-kit-react": "^1.4.0",
     "prop-types": "^15.7.2",
+<<<<<<< HEAD
+=======
+
+    "bootstrap": "^4.3.1",
+
+>>>>>>> 1f8f992f7664ba9e53c5f6977d46687fdb69186d
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.8",
     "react-bootstrap-table": "^4.3.1",

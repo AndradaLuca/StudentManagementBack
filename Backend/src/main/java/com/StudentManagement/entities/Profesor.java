@@ -47,4 +47,13 @@ public class Profesor {
     public void setSubject(Integer subject) {
         this.subject = subject;
     }
+
+    @Override
+    public String toString() {
+        return "Profesor{" +
+                "idprof=" + idprof +
+                ", user='" + user + '\'' +
+                ", subject=" + subject +
+                '}';
+    }
 }

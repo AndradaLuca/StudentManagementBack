@@ -3,10 +3,11 @@ package com.StudentManagement.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name="grup")
+@Table(name="grupa")
 public class Grup {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name="idgroup")
     Integer idgroup;
 

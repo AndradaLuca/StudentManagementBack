@@ -12,18 +12,55 @@ class Home extends Component {
                     <br/>
                     <br/>
                     <br/>
-                    <h5 className='textJ'>Universitatea Tehnică din Cluj-Napoca se prezintă astăzi<br/> ca o instituție de învațământ superior modernă,
-                        în plină<br/> evoluție, confirmând autentice disponibilități de creație<br/> științifică și culturală,
-                        fiind o “Universitate de Cercetare<br/> Avansată și Educație”, între primele douăsprezece<br/> universități din țară,
-                        conform Ordinului Ministerului<br/> Educației Naționale nr. 5262 din 5 septembrie 2011 privind<br/> clasificarea universitaților
-                        acreditate din sistemul național<br/>de învațământ.</h5>
+                    <h3 className='textJ'>Bine ati venit la Universitatea Tehnica</h3>
 
                     <Button bsstyle="primary">Autentificare</Button>
 
 
                 </Jumbotron>
 
+                <Row className="show-grid text-center">
+                    <Col xs={12} sm={4} className="home-person-wrapper">
 
+                        <Image src={require("../assets/img/rector.jpg")} className="prof-pic"/>
+
+                        <br/>
+                        <br/>
+
+                        <h3>Prof. univ. dr. ing. Vasile ŢOPA</h3>
+
+                        <p className="align-T">S-a născut pe 29 iulie 1957 la Cluj-Napoca. A studiat la Facultatea de Electrotehnică, din cadrul Universităţii Tehnice din Cluj-Napoca, unde a obţinut diploma de inginer. În perioada 1991 – 1998 şi-a făcut studiile doctorale, obţinând Diploma de Doctor Inginer</p>
+
+
+                    </Col >
+
+                    <Col xs={12} sm={4} className="home-person-wrapper">
+
+                        <Image src={require("../assets/img/prorector.jpg")} className="prof-pic"/>
+
+                        <br/>
+                        <br/>
+
+                        <h3>Prof. univ. dr. ing. Sergiu NEDEVSCHI</h3>
+
+                        <p>Născut la 9.10.1951 in Cluj-Napoca. Este absolvent al Institutului Politehnic din Cluj-Napoca in 1975, cu doctorat in inginerie electrică din anul 1993 la aceiaşi universitate. In perioada 2000-2004 a fost şeful Catedrei de Calculatoare.</p>
+
+                    </Col >
+
+                    <Col xs={12} sm={4} className="home-person-wrapper">
+
+                        <Image src={require("../assets/img/prorectord.jpg")} className="prof-pic"/>
+
+                        <br/>
+                        <br/>
+
+                        <h3>Prof. univ. dr. ing. Daniela Lucia MANEA</h3>
+
+                        <p>S-a născut pe 03.04.1965 la Cluj-Napoca. A studiat la Institutul Politehnic Cluj-Napoca, Facultatea de Construcții, unde a obţinut diploma de inginer constructor. În perioada 1988-1992 a fost inger in cadrul "Intreprinderea Județeană de Gospodarire Alba Iulia".</p>
+
+
+                    </Col >
+                </Row>
 
             </Container>
         );

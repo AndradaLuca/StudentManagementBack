@@ -20,6 +20,8 @@ public class ProfesorService {
         return profesorRepository.findById(id);
     }
 
+    public Profesor findByUsername(String username){return profesorRepository.findByUser(username);}
+
     //create a new student
     public Profesor save(Profesor profesor) {
         return profesorRepository.save(profesor);

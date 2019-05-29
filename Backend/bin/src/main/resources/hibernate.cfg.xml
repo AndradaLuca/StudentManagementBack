@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Database connection settings -->
+        <property name="connection.url">jdbc:mysql://localhost:3308/student_management_db</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">789456123</property>
+
+        <!-- mysql dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+ 
+        <mapping class="com.StudentManagement.entities.Materie"/>
+
+        <mapping class="com.StudentManagement.entities.Student"/>
+
+        <!--<mapping class="proiect.proiect.entities.client.Client"/>-->
+        <!--<mapping class="proiect.proiect.entities.flight.Flight"/>-->
+        
+        <!--<mapping class="proiect.proiect.entities.employee.Employee"/>-->
+        <!--<mapping class="proiect.proiect.entities.company.Company"/>-->
+
+
+    </session-factory>
+</hibernate-configuration>
