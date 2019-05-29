@@ -27,11 +27,19 @@ public class SesiuneController {
     /* to save an student*/
     @PostMapping("/addOrUpdate")
     public Sesiune createUser(@Valid @RequestBody Sesiune sesiune) {
-        Integer id = sesiune.getIdprof();
-        Optional<Profesor> profesor = profesorService.findById(id);
-        String subject = "Planificare Sesiune";
-        String txt = "Dear Prf," + "\n\n O sa trebuiasca sa fi prezent in data de " + sesiune.getDate() + " la facultate ca na!";
-        MailRepository.mail(profesor.get().getUser(),subject, txt);
+        Thread t = new Thread(){
+            public void run() {
+                Integer id = sesiune.getIdprof();
+                Optional<Profesor> profesor = profesorService.findById(id);
+                String subject = "Planificare Sesiune";
+                String txt = "Dear Prf," + "\n\n O sa trebuiasca sa fi prezent in data de " + sesiune.getDate() + " la facultate ca na!";
+                MailRepository.mail(profesor.get().getUser(),subject, txt);
+            }
+        };
+
+        t.start();
+        t.stop();
+
         return sesiuneService.save(sesiune);
     }
 

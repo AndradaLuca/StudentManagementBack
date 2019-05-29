@@ -46,7 +46,7 @@ export default class Login extends React.Component {
                 if(user !== null) {
                     window.localStorage.setItem('user', user.email)
 
-                    let type = getType(user.email)
+                    let type = Actions.getType(user.email)
 
                     if(type === 'student')  window.location.href = '/profile'
                     if(type === 'secretariat') window.location.href = '/secretariat'
@@ -133,6 +133,4 @@ export default class Login extends React.Component {
     }
 }
 
-function getType(email) {
-    return email.split('@')[1].split('.')[0]
-}
+

@@ -4,6 +4,7 @@ import Label from '../reusable_components/Label'
 import './TeachersManagement.css'
 import Button from '../reusable_components/Button';
 import { Container, Jumbotron } from 'react-bootstrap';
+import * as Actions from '../actions/Actions'
 
 export default class TeachersManagement extends React.Component {
     constructor(props) {
@@ -17,12 +18,30 @@ export default class TeachersManagement extends React.Component {
         }
 
         this.onChange = this.onChange.bind(this)
+        this.onSubmit = this.onSubmit.bind(this)
     }
 
     onChange(e) {
 		this.setState({
 			[e.target.name]: e.target.value
 		});
+    }
+
+    async onSubmit() {
+        let user = {
+            email: this.state.nume + '.' + this.state.prenume + '@professor.utcluj.ro',
+            password: this.state.parola
+        }
+
+        let professor = {
+            user: user,
+            subject: this.state.materie
+        }
+        
+        await Actions.addProfessor(professor).then(result => {
+            if(result !== null) 
+                alert('A professor was successfully added!')
+        })
     }
 
     render() {
@@ -83,7 +102,7 @@ export default class TeachersManagement extends React.Component {
                 <Button 
                     className = 'TMB'
                     text = 'Adauga profesor'
-                    onClick = {this.test}
+                    onClick = {this.onSubmit}
                 />
                 </Jumbotron>
             </Container>

@@ -46,12 +46,12 @@ class HeaderLinks extends React.Component {
      const user = localStorage.getItem('user');
 
     if(user !== null){
-      logat.style.display = "none";
-      nelogat.style.display = "block";
-    }
-    else {
       logat.style.display = "block";
       nelogat.style.display = "none";
+    }
+    else {
+      logat.style.display = "none";
+      nelogat.style.display = "block";
       }
   }
 
@@ -92,7 +92,7 @@ class HeaderLinks extends React.Component {
 
       <div id='nelogat'>
         <Button href="/login">Login</Button>
-        <Button href="/register">Register</Button>
+        <Button href="/login">Register</Button>
       </div>
     </List>
   );

@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: student_management_db
 -- ------------------------------------------------------
--- Server version	5.7.19-log
+-- Server version	5.7.21-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -110,7 +110,7 @@ CREATE TABLE `hibernate_sequence` (
 
 LOCK TABLES `hibernate_sequence` WRITE;
 /*!40000 ALTER TABLE `hibernate_sequence` DISABLE KEYS */;
-INSERT INTO `hibernate_sequence` VALUES (14),(14),(14),(14),(14);
+INSERT INTO `hibernate_sequence` VALUES (42),(42),(42),(42),(42);
 /*!40000 ALTER TABLE `hibernate_sequence` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -154,6 +154,8 @@ CREATE TABLE `session` (
   `idsession` int(11) NOT NULL,
   `date` varchar(45) DEFAULT NULL,
   `idprof` int(11) DEFAULT NULL,
+  `sala` varchar(45) DEFAULT NULL,
+  `materia` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idsession`),
   KEY `idprof_idx` (`idprof`),
   CONSTRAINT `idprof` FOREIGN KEY (`idprof`) REFERENCES `proffesor` (`idprof`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -166,6 +168,7 @@ CREATE TABLE `session` (
 
 LOCK TABLES `session` WRITE;
 /*!40000 ALTER TABLE `session` DISABLE KEYS */;
+INSERT INTO `session` VALUES (31,'12.12.1212 12:12',NULL,'f16','inutila'),(32,'12.12.1212 12:12',1,NULL,NULL),(33,'13.13.1313 13:13',1,'f16','inutila'),(34,'2020202020',1,'s20','in plus'),(35,'333 333 333',1,'d1','asd plus'),(36,'22 22 22 22',1,'asfa','asd plus'),(37,'22 22 22 22',NULL,'asfa','asd plus'),(38,'Thu May 30 2019  16:00',NULL,'40',NULL),(39,'Sat May 25 2019  12',NULL,'1w2','asdasd'),(40,'Sun May 26 2019  12',1,'13d','gsadgad'),(41,'Sun May 26 2019  12',1,'13d','gsadgad');
 /*!40000 ALTER TABLE `session` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -198,7 +201,7 @@ CREATE TABLE `student` (
 
 LOCK TABLES `student` WRITE;
 /*!40000 ALTER TABLE `student` DISABLE KEYS */;
-INSERT INTO `student` VALUES (2,'aaa','123444',1,'1','0000'),(4,'aaa','12344',1,'1','0000'),(5,'andrada.luca@student.utcluj.ro','234567',2,'2','23456');
+INSERT INTO `student` VALUES (2,'aaa.aaa@student.utcluj.ro','541523',2,'3','333333'),(4,'aaa.aaa@student.utcluj.ro','12344',1,'1','0000'),(5,'andrada.luca@student.utcluj.ro','234567',2,'2','23456'),(19,'aaa.bbb@profesor.utcluj.ro','135134134',2,'6','123456'),(22,'aaa.bbb@profesor.utcluj.ro','13513224134',1,'7','123456'),(25,'aaa.bbb@profesor.utcluj.ro','092823',2,'10','14513'),(30,'aaa.aaa@student.utcluj.ro','134431314',1,'5','13131');
 /*!40000 ALTER TABLE `student` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -277,7 +280,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('aaa','aaa'),('admin','admin'),('andrada.luca@student.utcluj.ro','parola'),('prof','prof'),('secretara','secretara'),('user','user');
+INSERT INTO `user` VALUES ('aaa.aaa@student.utcluj.ro','aaa'),('aaa.bbb@profesor.utcluj.ro','123'),('aaa@secretariat.ut','123'),('admin','admin'),('andrada.luca@student.utcluj.ro','parola'),('prof','prof'),('secretara','secretara'),('user','user');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -290,4 +293,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-29 10:43:56
+-- Dump completed on 2019-05-30  1:51:19

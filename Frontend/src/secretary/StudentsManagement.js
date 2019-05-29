@@ -4,6 +4,7 @@ import TextField from '../reusable_components/TextField'
 import './StudentsManagement.css'
 import Button from '../reusable_components/Button';
 import { Container, Jumbotron } from 'react-bootstrap';
+import * as Actions from '../actions/Actions'
 
 export default class StudentsManagement extends React.Component {
     constructor(props) {
@@ -20,12 +21,49 @@ export default class StudentsManagement extends React.Component {
         }
 
         this.onChange = this.onChange.bind(this)
+        this.add = this.add.bind(this)
+        this.update = this.update.bind(this)
     }
 
     onChange(e) {
 		this.setState({
 			[e.target.name]: e.target.value
 		});
+    }
+
+    async add() {
+        let email = this.state.nume + '.' + this.state.prenume + '@student.utcluj.ro'
+
+        let student = {
+            email: email,
+            idgroup: this.state.grupa,
+            anstudiu: this.state.an,
+            telefon: this.state.telefon,
+            cnp: this.state.cnp
+        }
+
+        await Actions.addOrUpdateStudent(student).then(result => {
+            if(result.status === 500)
+                alert('Wrong data!')
+        })
+    }
+
+    async update() {
+        let email = this.state.nume + '.' + this.state.prenume + '@student.utcluj.ro'
+
+        let student = {
+            idStudent: this.state.id,
+            email: email,
+            idgroup: this.state.grupa,
+            anstudiu: this.state.an,
+            telefon: this.state.telefon,
+            cnp: this.state.cnp
+        }
+
+        await Actions.addOrUpdateStudent(student).then(result => {
+            if(result.status === 500)
+                alert('Wrong data!')
+        })
     }
     
     render() {
@@ -126,13 +164,13 @@ export default class StudentsManagement extends React.Component {
                 </form>
                     <Button
                         className = 'SMB'
-                        onClick = {this.test}
+                        onClick = {this.add}
                         text = 'Adauga student'
                     />
 
                     <Button
                         className = 'SMB'
-                        onClick = {this.test}
+                        onClick = {this.update}
                         text = 'Modifica informatii student'
                     />
                 </Jumbotron>

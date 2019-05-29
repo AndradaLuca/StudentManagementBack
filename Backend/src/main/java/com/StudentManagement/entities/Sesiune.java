@@ -17,9 +17,17 @@ public class Sesiune {
     @Column(name="idprof")
     Integer idprof;
 
-    public Sesiune(String date, Integer idprof) {
+    @Column(name = "sala")
+    String sala;
+
+    @Column(name = "materia")
+    String materia;
+
+    public Sesiune(String date, Integer idprof, String sala, String materia) {
         this.date = date;
         this.idprof = idprof;
+        this.sala = sala;
+        this.materia = materia;
     }
 
     public Sesiune() {}
@@ -46,5 +54,21 @@ public class Sesiune {
 
     public void setIdprof(Integer idprof) {
         this.idprof = idprof;
+    }
+
+    public String getSala() {
+        return sala;
+    }
+
+    public void setSala(String sala) {
+        this.sala = sala;
+    }
+
+    public String getMateria() {
+        return materia;
+    }
+
+    public void setMateria(String materia) {
+        this.materia = materia;
     }
 }
