@@ -1,5 +1,6 @@
 package com.StudentManagement.services;
 
+import com.StudentManagement.dto.ProfPageDto;
 import com.StudentManagement.dto.SubjectStudentGrade;
 import com.StudentManagement.entities.Student;
 import com.StudentManagement.repositories.StudentRepository;
@@ -40,5 +41,5 @@ public class StudentService {
        return studentRepository.findByIdStudent(id);
     }
 
-
+    public List<ProfPageDto> getStudentsByProf(String prof){return studentRepository.getProfStudent(prof);}
 }
