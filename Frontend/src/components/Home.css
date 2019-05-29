@@ -3,17 +3,31 @@
     margin-top: -10px;
     height: 550px;
     width: 1550px;
+    opacity: 0.86;
     background-image: url("ut.jpg");
     background-size: cover;
     background-position: center;
 }
 .textJ{
 
-    color: white;
-    margin-left: -10px;
-    margin-top: 70px;
+    color: black;
+    font-weight: bold;
+    font-size: 35px;
+    margin-left: -30px;
+    margin-top: 140px;
 }
 .btn{
-    margin-left: 10px;
+    margin-left: -20px;
 
+}
+
+
+
+.prof-pic{
+    width: 80%;
+    border-radius: 50%;
+}
+
+.align-T{
+    margin-top: 36px;
 }

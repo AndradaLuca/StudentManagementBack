@@ -11,6 +11,7 @@ import UserProfile from './StudentProfile/UserProfile';
 
 import Home from './components/Home'
 import StudentGrade from './components/StudentGrade'
+import Professor from './components/Professor/Professor'
 
 
 class App extends Component {
@@ -43,6 +44,7 @@ class App extends Component {
                       <Route path='/' exact={true} component={Home} />
                       <Route path='/studGrade' component={StudentGrade}/>
                       <Route path='/profile' component={UserProfile} />
+                      <Route path='/professor' component={Professor} />
 
                   </div>
           </BrowserRouter>
