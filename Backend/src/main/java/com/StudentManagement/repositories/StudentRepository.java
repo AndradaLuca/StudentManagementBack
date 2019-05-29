@@ -12,6 +12,7 @@ import java.util.List;
 
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Integer> {
+
     @Query("select new com.StudentManagement.dto.SubjectStudentGrade(m.name,g.grade) from Student s JOIN StudentGrade sg on s.idStudent = sg.idstudent JOIN GradesSubject gs on sg.idstudentgrade = gs.idgradessubject JOIN Grades g on gs.idgrade = g.idgrades join Materie m on gs.idsubject=m.idsubject WHERE s.email = :mail")
     List<SubjectStudentGrade> getStudentGradeSubject(String mail);
 
@@ -19,5 +20,6 @@ public interface StudentRepository extends JpaRepository<Student, Integer> {
 
     @Query("select new com.StudentManagement.dto.ProfPageDto(s.email,m.name,g.grade) from Student s JOIN StudentGrade sg on s.idStudent = sg.idstudent JOIN GradesSubject gs on sg.idstudentgrade = gs.idgradessubject JOIN Grades g on gs.idgrade = g.idgrades join Materie m on gs.idsubject=m.idsubject JOIN Profesor p on p.subject = m.idsubject WHERE p.user= :prof")
     List<ProfPageDto> getProfStudent(String prof);
+
 
 }

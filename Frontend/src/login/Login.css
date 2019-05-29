@@ -5,15 +5,7 @@
     --login-label-color: white;
 }
 
-body{
-    background-image: url('../images/loginBackground.jpg');
-    
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
 
-    text-align: center;
-}
 
 .LoginPage {
     width: 500px;
