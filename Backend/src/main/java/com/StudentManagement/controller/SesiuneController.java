@@ -29,7 +29,9 @@ public class SesiuneController {
     public Sesiune createUser(@Valid @RequestBody Sesiune sesiune) {
         Integer id = sesiune.getIdprof();
         Optional<Profesor> profesor = profesorService.findById(id);
-        MailRepository.mail(sesiune.getDate(),profesor.get().getUser());
+        String subject = "Planificare Sesiune";
+        String txt = "Dear Prf," + "\n\n O sa trebuiasca sa fi prezent in data de " + sesiune.getDate() + " la facultate ca na!";
+        MailRepository.mail(profesor.get().getUser(),subject, txt);
         return sesiuneService.save(sesiune);
     }
 

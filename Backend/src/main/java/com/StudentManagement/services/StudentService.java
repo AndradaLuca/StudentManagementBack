@@ -35,5 +35,10 @@ public class StudentService {
         return studentRepository.getStudentGradeSubject(email);
     }
 
+    public Student findByIdStudent(Integer id)
+    {
+       return studentRepository.findByIdStudent(id);
+    }
+
 
 }
