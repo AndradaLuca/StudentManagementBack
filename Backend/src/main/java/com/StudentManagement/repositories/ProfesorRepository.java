@@ -10,4 +10,6 @@ import java.util.Optional;
 public interface ProfesorRepository extends JpaRepository<Profesor,Integer> {
     @Override
     Optional<Profesor> findById(Integer integer);
+
+    Profesor findByUser(String user);
 }

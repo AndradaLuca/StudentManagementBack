@@ -1,15 +1,13 @@
 package com.StudentManagement.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="grades")
 public class Grades {
     @Id
     @Column(name="idgrades")
+    @GeneratedValue(strategy=GenerationType.AUTO)
     Integer idgrades;
 
     @Column(name="grade")

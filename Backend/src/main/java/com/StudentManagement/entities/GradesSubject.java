@@ -1,15 +1,13 @@
 package com.StudentManagement.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="gradessubject")
 public class GradesSubject {
     @Id
     @Column(name="idgradessubject")
+    @GeneratedValue(strategy=GenerationType.AUTO)
     Integer idgradessubject;
 
     @Column(name="idgrade")
@@ -21,8 +19,8 @@ public class GradesSubject {
     public GradesSubject() {
     }
 
-    public GradesSubject(Integer idgradesubject, Integer idgrade, Integer idsubject) {
-        this.idgradessubject = idgradesubject;
+
+    public GradesSubject(Integer idgrade, Integer idsubject) {
         this.idgrade = idgrade;
         this.idsubject = idsubject;
     }

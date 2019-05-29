@@ -7,6 +7,7 @@ import javax.persistence.*;
 public class Grup {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name="idgroup")
     Integer idgroup;
 
