@@ -1,0 +1,10 @@
+.jumboProf{
+    margin-left: -220px;
+    margin-top: 70px;
+    height: 550px;
+    width: 1534.9px;
+    opacity: 0.86;
+    background-image: url("../../assets/img/professor.jpg");
+    background-size: cover;
+    background-position: center;
+}
