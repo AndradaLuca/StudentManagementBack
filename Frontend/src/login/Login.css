@@ -2,30 +2,23 @@
     --button-color: black;
     --button-hover-color: blue;
     --background-button-color: white;
-    --login-label-color: white;
+    --login-label-color: black;
 }
 
-body{
+.LoginPage {   
     background-image: url('../images/loginBackground.jpg');
-    
+
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
 
-    text-align: center;
-}
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
 
-.LoginPage {
-    width: 500px;
-	height: 200px;
-	
-	position: absolute;
-	top:0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-  	
-	margin: auto;
+    text-align: center;
 }
 
 .LoginButton {
@@ -47,7 +40,7 @@ body{
 .LoginForm {
     margin-left: auto;
     margin-right: auto;
-    margin-top: auto;
+    margin-top: 200px;
     font-size: 200%;
     display: table;
 }
@@ -58,6 +51,8 @@ body{
     margin-bottom: 30px;
     color: var(--login-label-color);
     display: inline-block;
+    float: left;
+    clear: left;
 }
 
 .LoginInput {
@@ -65,4 +60,5 @@ body{
     padding-right: 10px;
     width: 300px;
     display: inline-block;
+    float: right;
 }

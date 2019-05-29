@@ -52,10 +52,10 @@ class App extends Component {
                       <Route path='/professor' component={Professor} />
 
                       <Route path='/login' component={Login}/>
-                      <Route path='/secretary' component={SecretaryHeader}/>
-                      <Route path='/studenti' component={StudentsManagement}/>
-                      <Route path='/profesori' component={TeachersManagement}/>
-                      <Route path='/sesiune' component={ExamSession}/>
+                      <Route path='/secretariat' component={SecretaryHeader}/>
+                      <Route path='/secretariat/studenti' component={StudentsManagement}/>
+                      <Route path='/secretariat/profesori' component={TeachersManagement}/>
+                      <Route path='/secretariat/sesiune' component={ExamSession}/>
 
 
                   </div>

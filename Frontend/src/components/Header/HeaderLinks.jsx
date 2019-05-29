@@ -45,7 +45,7 @@ class HeaderLinks extends React.Component {
 
      const user = localStorage.getItem('user');
 
-    if(user === null){
+    if(user !== null){
       logat.style.display = "block";
       nelogat.style.display = "none";
     }
@@ -78,17 +78,13 @@ class HeaderLinks extends React.Component {
     <List className={classes.list}>
      
       <div id='logat'>
-        <Button href='/profesori' onClick={this.managementProfesori}> Profesori </Button>
-        <Button href='/studenti' onClick={this.managementStudenti}> Studenti </Button>
-        <Button href='/sesiune' onClick={this.planificareSesiune}> Sesiune </Button>
+        
 
         <Button href="/user-profile" color="transparent">
             <b id='nume'></b>
         </Button>
 
-          <p>{"Bine ati venit " + window.localStorage.getItem("user")}</p>
-
-        <Button href="/" onClick={()=>this.logout()} className="d-inline">Logout</Button>
+        <Button href="/" onClick={()=>this.logout()}>Logout</Button>
       </div>
 
       <div id='nelogat'>
