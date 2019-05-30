@@ -17,7 +17,9 @@ public interface StudentRepository extends JpaRepository<Student, Integer> {
 
     Student findByIdStudent(Integer id);
 
-    @Query("select new com.StudentManagement.dto.ProfPageDto(s.email,m.name,g.grade) from Student s JOIN StudentGrade sg on s.idStudent = sg.idstudent JOIN GradesSubject gs on sg.idstudentgrade = gs.idgradessubject JOIN Grades g on gs.idgrade = g.idgrades join Materie m on gs.idsubject=m.idsubject JOIN Profesor p on p.subject = m.idsubject WHERE p.user= :prof")
-    List<ProfPageDto> getProfStudent(String prof);
+    @Query("select new com.StudentManagement.dto.ProfPageDto(s.email,m.name,g.grade) from Student s JOIN StudentGrade sg on s.idStudent = sg.idstudent JOIN GradesSubject gs on sg.idstudentgrade = gs.idgradessubject JOIN Grades g on gs.idgrade = g.idgrades join Profesor p on p.subject = gs.idsubject JOIN Materie m on m.idsubject = p.subject WHERE p.user = :profesor")
+    List<ProfPageDto> getProfStudent(String profesor);
+
+    Student findByEmail(String email);
 
 }
