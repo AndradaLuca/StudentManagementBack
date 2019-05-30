@@ -42,4 +42,9 @@ public class StudentService {
     }
 
     public List<ProfPageDto> getStudentsByProf(String prof){return studentRepository.getProfStudent(prof);}
+
+    public Student findByEmail(String email)
+    {
+        return studentRepository.findByEmail(email);
+    }
 }

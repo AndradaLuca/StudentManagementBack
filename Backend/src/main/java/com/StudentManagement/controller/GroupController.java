@@ -1,6 +1,7 @@
 package com.StudentManagement.controller;
 
 import com.StudentManagement.entities.Grup;
+import com.StudentManagement.entities.User;
 import com.StudentManagement.services.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -24,5 +25,10 @@ public class GroupController {
     @GetMapping("/groupById")
     public Optional<Grup> getGroupById(@Valid @RequestParam Integer id) {
         return groupService.listById(id);
+    }
+
+    @PostMapping("/addOrUpdate")
+    public Grup createUser(@Valid @RequestBody Grup grup) {
+        return groupService.save(grup);
     }
 }
