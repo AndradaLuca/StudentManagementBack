@@ -20,8 +20,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         var nextVC = UIViewController()
-        
-        let identifier = UserDefaults.standard.string(forKey: tokenKey) == nil ? loginNavigationId : mainTabBarId
+        let userKey = UserDefaults.standard.string(forKey: tokenKey)
+        var identifier = loginNavigationId
+        if let userKey = userKey {
+            if userKey == "admin" {
+                identifier = mainTabBarId
+            } else if userKey == "secretara" {
+                identifier = secretaraID
+            } else {
+                identifier = studentGradeID
+            }
+        }
         nextVC = storyboard.instantiateViewController(withIdentifier: identifier)
         self.window?.rootViewController = nextVC
         self.window?.makeKeyAndVisible()

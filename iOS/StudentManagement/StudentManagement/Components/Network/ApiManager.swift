@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import AlamofireObjectMapper
 
 class ApiManager {
     
@@ -19,7 +20,58 @@ class ApiManager {
         
         Alamofire.request(requestUrl, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
             if let _ = response.result.value as? NSDictionary {
-                UserDefaults.standard.set("loggedIn", forKey: tokenKey)
+                UserDefaults.standard.set(email, forKey: tokenKey)
+                completion(true)
+            } else {
+                completion(false)
+            }
+        }
+    }
+    
+    static func getAllStudents(completion: @escaping ([Student]?) -> ()) {
+        
+        let headers: [String: String] = ["Content-Type": "application/json"]
+        let requestUrl = baseUrl + "/student/all"
+        
+        Alamofire.request(requestUrl, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseArray(completionHandler: { (response: DataResponse<[Student]>) in
+            if let statusCode = response.response?.statusCode {
+                if statusCode == 200 {
+                    completion(response.result.value ?? [])
+                } else {
+                    completion(nil)
+                }
+            } else {
+                completion(nil)
+            }
+        })
+    }
+    
+    static func getAllGrades(completion: @escaping ([StudentGrade]?) -> ()) {
+        
+        let headers: [String: String] = ["Content-Type": "application/json"]
+        let requestUrl = baseUrl + "/studentGrade/all"
+        
+        Alamofire.request(requestUrl, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseArray { (response: DataResponse<[StudentGrade]>) in
+            if let statusCode = response.response?.statusCode {
+                if statusCode == 200 {
+                    completion(response.result.value ?? [])
+                } else {
+                    completion(nil)
+                }
+            } else {
+                completion(nil)
+            }
+        }
+    }
+    
+    static func addStudentGrade(idStudent: Int64, grade: String, idProfesor: Int, completion: @escaping (Bool) -> ()) {
+        
+        let headers: [String: String] = ["Content-Type": "application/json"]
+        let requestUrl = baseUrl + "/studentGrade/addGrade"
+        let params: Parameters = ["student": "\(idStudent)", "grade": grade, "profesor": idProfesor]
+        
+        Alamofire.request(requestUrl, method: .post, parameters: params, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
+            if let _ = response.result.value as? NSDictionary {
                 completion(true)
             } else {
                 completion(false)
