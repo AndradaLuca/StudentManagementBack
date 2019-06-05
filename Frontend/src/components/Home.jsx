@@ -14,7 +14,7 @@ class Home extends Component {
                     <br/>
                     <h3 className='textJ'>Bine ati venit la Universitatea Tehnica</h3>
 
-                    <Button bsstyle="primary">Autentificare</Button>
+                    <Button href="/login" bsstyle="primary">Autentificare</Button>
 
 
                 </Jumbotron>
