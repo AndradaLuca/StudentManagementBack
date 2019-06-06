@@ -49,7 +49,7 @@ class Professor extends Component {
 
                 console.log(response.body)
 
-               
+
 
             })
             .catch(err => {
