@@ -45,6 +45,14 @@ class StudentGradesViewController: UIViewController, UITableViewDelegate, UITabl
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let student = self.students[indexPath.row]
+        let message = "nume: \(student.email)\nan studiu: \(student.anStudiu)\ncnp: \(student.cnp)"
+        let alert = UIAlertController(title: "Detalii student", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func logoutTapped(_ sender: UIBarButtonItem) {
         UserDefaults.standard.removeObject(forKey: tokenKey)
         let nextVC = self.storyboard?.instantiateViewController(withIdentifier: loginNavigationId) as? UINavigationController ?? UINavigationController()

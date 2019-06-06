@@ -78,4 +78,37 @@ class ApiManager {
             }
         }
     }
+    
+    static func addGroup(name: String, completion: @escaping (Bool) -> ()) {
+        
+        let headers: [String: String] = ["Content-Type": "application/json"]
+        let requestUrl = baseUrl + "/grup/addOrUpdate"
+        let params: Parameters = ["denumire": name]
+        
+        Alamofire.request(requestUrl, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+            if let _ = response.result.value as? NSDictionary {
+                completion(true)
+            } else {
+                completion(false)
+            }
+        }
+    }
+    
+    static func getGroups(completion: @escaping ([Group]?) -> ()) {
+        
+        let headers: [String: String] = ["Content-Type": "application/json"]
+        let requestUrl = baseUrl + "/grup/all"
+        
+        Alamofire.request(requestUrl, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseArray(completionHandler: { (response: DataResponse<[Group]>) in
+            if let statusCode = response.response?.statusCode {
+                if statusCode == 200 {
+                    completion(response.result.value ?? [])
+                } else {
+                    completion(nil)
+                }
+            } else {
+                completion(nil)
+            }
+        })
+    }
 }

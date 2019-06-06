@@ -26,6 +26,8 @@
 		63A0DA2D22832DCD001ADE2F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0DA2C22832DCD001ADE2F /* LoginViewController.swift */; };
 		63A0DA3122832E8E001ADE2F /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0DA3022832E8E001ADE2F /* ApiManager.swift */; };
 		63A0DA3322832F21001ADE2F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0DA3222832F21001ADE2F /* Constants.swift */; };
+		63FAD5D822A8E364001B1D4D /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAD5D722A8E364001B1D4D /* Group.swift */; };
+		63FAD5DA22A8E3AD001B1D4D /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAD5D922A8E3AD001B1D4D /* GroupTableViewCell.swift */; };
 		EF20F19CE83A0891CF223F69 /* Pods_StudentManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54BCBA1B0B40C55030BB5C9B /* Pods_StudentManagement.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +54,8 @@
 		63A0DA2C22832DCD001ADE2F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		63A0DA3022832E8E001ADE2F /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		63A0DA3222832F21001ADE2F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		63FAD5D722A8E364001B1D4D /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		63FAD5D922A8E3AD001B1D4D /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		AECFDD313379DE0CD459214E /* Pods-StudentManagement.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudentManagement.release.xcconfig"; path = "Target Support Files/Pods-StudentManagement/Pods-StudentManagement.release.xcconfig"; sourceTree = "<group>"; };
 		DE073F47E3D4928F708630E3 /* Pods-StudentManagement.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudentManagement.debug.xcconfig"; path = "Target Support Files/Pods-StudentManagement/Pods-StudentManagement.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +86,7 @@
 				6323E67C229EF32F00F97413 /* Professor.swift */,
 				6323E680229F904700F97413 /* Student.swift */,
 				6323E682229F91AD00F97413 /* StudentGrade.swift */,
+				63FAD5D722A8E364001B1D4D /* Group.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -91,6 +96,7 @@
 			children = (
 				6323E685229F942100F97413 /* StudentTableViewCell.swift */,
 				6323E687229F9A6F00F97413 /* ProfessorTableViewCell.swift */,
+				63FAD5D922A8E3AD001B1D4D /* GroupTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -319,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63A0DA2D22832DCD001ADE2F /* LoginViewController.swift in Sources */,
+				63FAD5D822A8E364001B1D4D /* Group.swift in Sources */,
 				6323E68A229FA01C00F97413 /* SecretaraViewController.swift in Sources */,
 				6323E67A229EEE6200F97413 /* StudentGradesViewController.swift in Sources */,
 				63A0DA132283205B001ADE2F /* HomeViewController.swift in Sources */,
@@ -326,6 +333,7 @@
 				6323E688229F9A6F00F97413 /* ProfessorTableViewCell.swift in Sources */,
 				6323E683229F91AD00F97413 /* StudentGrade.swift in Sources */,
 				63A0DA3122832E8E001ADE2F /* ApiManager.swift in Sources */,
+				63FAD5DA22A8E3AD001B1D4D /* GroupTableViewCell.swift in Sources */,
 				6323E67F229EF44800F97413 /* ProfessorViewController.swift in Sources */,
 				63A0DA2822832A66001ADE2F /* MainAlertController.swift in Sources */,
 				6323E681229F904700F97413 /* Student.swift in Sources */,
